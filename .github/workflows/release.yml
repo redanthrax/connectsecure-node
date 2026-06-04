@@ -1,5 +1,5 @@
 # Publish to npm via OIDC trusted publishing (required).
-# Configure at https://www.npmjs.com/package/n8n-nodes-connectsecure → Settings → Publishing access → GitHub Actions.
+# Configure at https://www.npmjs.com/package/@redanthrax/n8n-nodes-connectsecure → Settings → Publishing access → GitHub Actions.
 name: Release
 
 on:

@@ -1,4 +1,4 @@
-# n8n-nodes-connectsecure
+# @redanthrax/n8n-nodes-connectsecure
 
 An n8n community node for integrating with the Connect Secure API.
 
@@ -37,7 +37,7 @@ Requires **Node.js 22.22.3+**.
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
 ```bash
-npm install n8n-nodes-connectsecure
+npm install @redanthrax/n8n-nodes-connectsecure
 ```
 
 ## Prerequisites

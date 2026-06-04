@@ -46,7 +46,7 @@ Check for persistence artifacts: `.claude/router_runtime.js`, malicious `.vscode
 
 ### Maintainer / publish hardening
 
-- Enable **npm 2FA** and configure **trusted publishing (OIDC)** for `n8n-nodes-connectsecure` on npmjs.com (Package → **Publishing access** → link this GitHub repo and the `Release` workflow). Releases do **not** use a long-lived `NPM_TOKEN`.
+- Enable **npm 2FA** and configure **trusted publishing (OIDC)** for `@redanthrax/n8n-nodes-connectsecure` on npmjs.com (Package → **Publishing access** → link this GitHub repo and the `Release` workflow). Releases do **not** use a long-lived `NPM_TOKEN`.
 - Releases use [`.github/workflows/release.yml`](.github/workflows/release.yml): frozen lockfile → blocklist scan → **pnpm audit** (high+) → **OSV-Scanner** → build → `npm publish --provenance` via OIDC.
 - Never use `pull_request_target` with write permissions + checkout of untrusted PR code.
 - Run `pnpm run audit:supply-chain` before release; `prepublishOnly` runs the same check locally.
