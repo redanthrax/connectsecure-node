@@ -1,0 +1,28 @@
+# Node.js dependencies
+/node_modules
+
+# Other package managers (this repo uses pnpm only)
+package-lock.json
+yarn.lock
+npm-shrinkwrap.json
+bun.lock
+bun.lockb
+
+# Build output
+/dist
+/build
+/lib
+*.tsbuildinfo
+
+# Logs and temporary files
+*.log
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
