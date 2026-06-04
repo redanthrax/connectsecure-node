@@ -46,8 +46,8 @@ Check for persistence artifacts: `.claude/router_runtime.js`, malicious `.vscode
 
 ### Maintainer / publish hardening
 
-- Enable **npm 2FA** and configure **trusted publishing (OIDC)** for `@redanthrax/n8n-nodes-connectsecure` on npmjs.com (Package → **Publishing access** → link this GitHub repo and the `Release` workflow). Releases do **not** use a long-lived `NPM_TOKEN`.
-- Releases use [`.github/workflows/release.yml`](.github/workflows/release.yml): frozen lockfile → blocklist scan → **pnpm audit** (high+) → **OSV-Scanner** → build → `npm publish --provenance` via OIDC.
+- Enable **npm 2FA** and configure **trusted publishing (OIDC)** for `@redanthrax/n8n-nodes-connectsecure` on npmjs.com (Package → **Publishing access** → **Trusted Publishers** → workflow filename `publish.yml`, repo `redanthrax/connectsecure-node`). Releases do **not** use a long-lived `NPM_TOKEN`.
+- Releases use [`.github/workflows/publish.yml`](.github/workflows/publish.yml): frozen lockfile → blocklist scan → **pnpm audit** (high+) → **OSV-Scanner** → build → `npm publish --provenance` via OIDC.
 - Never use `pull_request_target` with write permissions + checkout of untrusted PR code.
 - Run `pnpm run audit:supply-chain` before release; `prepublishOnly` runs the same check locally.
 - CI **fails** on high+ `pnpm audit` findings and OSV lockfile hits (see [`supply-chain.yml`](.github/workflows/supply-chain.yml)). Transitive issues may be mitigated with `overrides` in `pnpm-workspace.yaml` (e.g. `lodash`, `uuid`).

@@ -78,6 +78,16 @@ Programmatic helpers: `fieldDiscovery.ts`, `queryHelpers.ts`.
 
 Endpoints not covered by a dedicated resource can be called with **Custom API Call**. See [`docs/swagger.yaml`](docs/swagger.yaml) for paths and payloads.
 
+## Publishing to npm (n8n community verification)
+
+n8n requires packages to be published from **GitHub Actions with npm provenance**. Local `npm publish` will not pass community verification.
+
+1. On [npm](https://www.npmjs.com/package/@redanthrax/n8n-nodes-connectsecure) → **Settings** → **Trusted Publishers**, add GitHub Actions: owner `redanthrax`, repo `connectsecure-node`, workflow **`publish.yml`** (filename, not the workflow title).
+2. Bump `version` in `package.json`, commit, and push.
+3. Create and push a matching tag: `git tag 0.1.1 && git push origin 0.1.1` (or publish a GitHub Release).
+4. Confirm the [Publish workflow](https://github.com/redanthrax/connectsecure-node/actions/workflows/publish.yml) succeeds.
+5. On npm, the new version should show a **Provenance** badge. Submit that version in the n8n Creator Portal.
+
 ## License
 
 MIT

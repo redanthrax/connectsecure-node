@@ -1,8 +1,20 @@
-# Publish to npm via OIDC trusted publishing (required).
-# Configure at https://www.npmjs.com/package/@redanthrax/n8n-nodes-connectsecure → Settings → Publishing access → GitHub Actions.
-name: Release
+# Publishes to npm with provenance (required for n8n community verification).
+#
+# One-time npm setup:
+# 1. https://www.npmjs.com/package/@redanthrax/n8n-nodes-connectsecure → Settings
+# 2. Publish access → Trusted Publishers → Add GitHub Actions publisher:
+#    - Owner: redanthrax
+#    - Repository: connectsecure-node
+#    - Workflow filename: publish.yml
+#
+# Release: bump version in package.json, commit, push tag (e.g. 0.1.1), this workflow runs.
+
+name: Publish
 
 on:
+  push:
+    tags:
+      - '*.*.*'
   release:
     types: [published]
   workflow_dispatch:
