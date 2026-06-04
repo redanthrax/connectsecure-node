@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redanthrax/connectsecure-node.git"
+    "url": "https://github.com/redanthrax/connectsecure-node"
   },
   "publishConfig": {
     "access": "public",

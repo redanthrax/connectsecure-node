@@ -40,7 +40,8 @@ jobs:
         with:
           node-version: '24.x'
           cache: pnpm
-          registry-url: https://registry.npmjs.org
+          # Do NOT set registry-url here — it writes _authToken=${NODE_AUTH_TOKEN} to .npmrc,
+          # which blocks OIDC trusted publishing and surfaces as a misleading 404 on publish.
 
       - name: Upgrade npm (OIDC trusted publishing requires npm 11.5.1+)
         run: npm install -g npm@11
