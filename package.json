@@ -1,6 +1,6 @@
 {
   "name": "@redanthrax/n8n-nodes-connectsecure",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "An n8n node to connect to the Connect Secure API",
   "keywords": [
     "n8n-community-node-package"
