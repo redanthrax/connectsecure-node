@@ -13,7 +13,7 @@ This repository uses defenses against npm supply-chain worms such as **Mini Shai
 - **Blocklist scan** — `pnpm run audit:supply-chain` checks the lockfile against `security/compromised-packages.json` and validates pnpm config.
 - **Delayed updates** — `minimumReleaseAge` (24h, strict) reduces exposure to freshly published malicious versions.
 - **No exotic transitive deps** — `blockExoticSubdeps` blocks git/tarball transitive resolutions.
-- **Version overrides** — known CVEs are mitigated via `overrides` in `pnpm-workspace.yaml` (e.g. `lodash`, `uuid`).
+- **Version overrides** — known CVEs are mitigated via `overrides` in `pnpm-workspace.yaml` (e.g. `brace-expansion`, `lodash`, `uuid`).
 
 ### Enforcing pnpm for contributors
 
@@ -50,7 +50,7 @@ Check for persistence artifacts: `.claude/router_runtime.js`, malicious `.vscode
 - Releases use [`.github/workflows/publish.yml`](.github/workflows/publish.yml): frozen lockfile → blocklist scan → **pnpm audit** (high+) → **OSV-Scanner** → build → `npm publish --provenance` via OIDC.
 - Never use `pull_request_target` with write permissions + checkout of untrusted PR code.
 - Run `pnpm run audit:supply-chain` before release; `prepublishOnly` runs the same check locally.
-- CI **fails** on high+ `pnpm audit` findings and OSV lockfile hits (see [`supply-chain.yml`](.github/workflows/supply-chain.yml)). Transitive issues may be mitigated with `overrides` in `pnpm-workspace.yaml` (e.g. `lodash`, `uuid`).
+- CI **fails** on high+ `pnpm audit` findings and OSV lockfile hits (see [`supply-chain.yml`](.github/workflows/supply-chain.yml)). Transitive issues may be mitigated with `overrides` in `pnpm-workspace.yaml` (e.g. `brace-expansion`, `lodash`, `uuid`).
 - **Branch protection (recommended):** require the **Supply chain security** check on `master` before merge; do not auto-merge Dependabot PRs without green CI.
 - Review Dependabot PRs; weekly dev-dependency groups still must pass supply-chain + audit + build.
 

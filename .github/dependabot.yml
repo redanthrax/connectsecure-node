@@ -14,5 +14,9 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    # typescript-eslint still requires TypeScript <6.1; ignore TS 7+ until that changes.
+    ignore:
+      - dependency-name: typescript
+        versions: [">=7"]
     # All Dependabot PRs must pass the "Supply chain security" workflow before merge
     # (enable required status checks on master in GitHub branch protection).
