@@ -116,8 +116,8 @@ function verifyActivePnpmConfig() {
 			}
 		}
 
-		if (!config.includes('lodash=') || !config.includes('uuid=')) {
-			errors.push('pnpm overrides for lodash/uuid are not active — check pnpm-workspace.yaml');
+		if (!config.includes('lodash=') || !config.includes('uuid=') || !config.includes('brace-expansion=')) {
+			errors.push('pnpm overrides for brace-expansion/lodash/uuid are not active — check pnpm-workspace.yaml');
 		}
 	} catch (error) {
 		errors.push(`unable to read pnpm config: ${error.message}`);
