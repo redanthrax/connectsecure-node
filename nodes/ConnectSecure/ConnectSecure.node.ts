@@ -201,7 +201,10 @@ export class ConnectSecure implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Connect Secure',
 		name: 'connectSecure',
-		icon: 'file:connectsecure.svg',
+		icon: {
+			light: 'file:connectsecure.light.svg',
+			dark: 'file:connectsecure.dark.svg',
+		},
 		group: ['transform'],
 		version: 1,
 		subtitle: '={$parameter["operation"] + ": " + $parameter["resource"]}',
