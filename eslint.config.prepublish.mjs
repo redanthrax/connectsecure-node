@@ -4,12 +4,6 @@ import baseConfig from './eslint.config.mjs';
 export default [
 	...baseConfig,
 	{
-		files: ['nodes/ConnectSecure/resourceGetAllEndpoints.ts'],
-		rules: {
-			'no-secrets/no-secrets': 'off',
-		},
-	},
-	{
 		files: ['package.json'],
 		rules: {
 			'@n8n/community-nodes/package-name-convention': 'error',
