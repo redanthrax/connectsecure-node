@@ -1,5 +1,6 @@
 # Node.js dependencies
 /node_modules
+/.pnpm-store/
 
 # Other package managers (this repo uses pnpm only)
 package-lock.json
