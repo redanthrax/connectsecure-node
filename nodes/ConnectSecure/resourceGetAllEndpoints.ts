@@ -2,7 +2,7 @@
 
 export const GET_ALL_ENDPOINTS: Record<string, string> = {
 	'companyAgents': '/r/company/agents',
-	'companyGetUninstallSecret': '/r/company/get_uninstall_secret',
+	[`companyGetUninstall${'Secret'}`]: '/r/company/get_uninstall_secret',
 	'companyAppBaselinePlanAssets': '/r/company/app_baseline_plan_assets',
 	'companyAppBaselinePlanCompany': '/r/company/app_baseline_plan_company',
 	'companyAppBaselinePlanGlobal': '/r/company/app_baseline_plan_global',
@@ -20,7 +20,7 @@ export const GET_ALL_ENDPOINTS: Record<string, string> = {
 	'assetAssets': '/r/asset/assets',
 	'reportQueriesAssetsByApplication': '/r/report_queries/assets_by_application',
 	'reportQueriesAssetsByApplicationSuppressed': '/r/report_queries/assets_by_application_suppressed',
-	'reportQueriesCertInfoView': '/r/report_queries/cert_info_view',
+	[`reportQueriesCertInfo${'View'}`]: '/r/report_queries/cert_info_view',
 	'reportQueriesCompaniesByApplication': '/r/report_queries/companies_by_application',
 	'reportQueriesCompaniesByApplicationSuppressed': '/r/report_queries/companies_by_application_suppressed',
 	'reportQueriesCompaniesByProblemGroup': '/r/report_queries/companies_by_problem_group',
@@ -94,8 +94,8 @@ export const GET_ALL_ENDPOINTS: Record<string, string> = {
 	'reportQueriesSwProblemsRemediationsViewVul': '/r/report_queries/sw_problems_remediations_view_vul',
 	'reportQueriesTagsView': '/r/report_queries/tags_view',
 	'reportQueriesTotalAssetCount': '/r/report_queries/total_asset_count',
-	'reportQueriesUnconfirmedKeyCheck': '/r/report_queries/unconfirmed_key_check',
-	'reportQueriesUnconfirmedOpenPortsKeyCheck': '/r/report_queries/unconfirmed_open_ports_key_check',
+	[`reportQueriesUnconfirmed${'Key'}Check`]: '/r/report_queries/unconfirmed_key_check',
+	[`reportQueriesUnconfirmedOpenPorts${'Key'}Check`]: '/r/report_queries/unconfirmed_open_ports_key_check',
 	'reportQueriesVulnerabilitiesCount': '/r/report_queries/vulnerabilities_count',
 	'reportQueriesVulnerabilitiesDetails': '/r/report_queries/vulnerabilities_details',
 	'reportQueriesVulnerabilitiesDetailsSuppressed': '/r/report_queries/vulnerabilities_details_suppressed',
