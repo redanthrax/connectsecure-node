@@ -6,6 +6,10 @@ overrides:
   lodash: '>=4.18.0'
   uuid: '11.1.1'
   n8n-workflow: '2.28.1'
+  # GHSA-g3hv-75wg-m249 (minimatch <11.0.1). @typescript-eslint/typescript-estree
+  # still depends on minimatch ^10, which has no patched release. 11.x keeps the
+  # minimatch(path, pattern, { dot }) call that typescript-estree uses.
+  minimatch: '>=11.0.1 <12'
 
 onlyBuiltDependencies:
   - isolated-vm
